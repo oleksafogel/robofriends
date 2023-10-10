@@ -1,0 +1,20 @@
+.Card {
+    background-color: lightgreen;
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 10px;
+    border-radius: 5px;
+    transition: transform 0.25s ease-out;
+    padding: 30px;
+}
+
+.Card:hover {
+    transform: scale(1.05);
+}
+
+.text {
+    text-align: center;
+}
