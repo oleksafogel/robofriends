@@ -1,4 +1,4 @@
-import React, { Component, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
 import './App.css';
 
@@ -13,7 +13,6 @@ export default function App() {
     const filteredRobots = robots.filter(robot => {
         return robot.name.toLowerCase().includes(searchInput.toLowerCase());
     });
-    const [count, setCount] = useState(0);
 
     useEffect(() => {
         fetch('https://jsonplaceholder.typicode.com/users')
@@ -21,9 +20,8 @@ export default function App() {
                 return response.json();
             }).then(users => {
                 setRobots(users);
-                console.log(count);
             })
-    }, [count]);
+    });
 
     function onSearchChange(event) {
         setSearchInput(event.target.value);
@@ -32,7 +30,6 @@ export default function App() {
     return !robots.length ? <h1 style={{ textAlign: 'center' }}>Loading...</h1> : (
         <div className='App'>
             <h1>RoboFriends</h1>
-            <button onClick={() => setCount(count+1)}>Click Me!</button>
             <SearchBox searchChange={onSearchChange} />
             <Scroll>
                 <ErrorBoundary>
