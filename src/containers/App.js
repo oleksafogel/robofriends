@@ -29,7 +29,7 @@ export default function App() {
 
     return !robots.length ? <h1 style={{ textAlign: 'center' }}>Loading...</h1> : (
         <div className='App'>
-            <h1>Robo Friends</h1>
+            <h1>Robofriends</h1>
             <SearchBox searchChange={onSearchChange} />
             <Scroll>
                 <ErrorBoundary>
